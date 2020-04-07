@@ -1,0 +1,4 @@
+.detailsText{
+    display: flex;
+    flex-direction: row;
+}

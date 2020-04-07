@@ -1,0 +1,14 @@
+<div *ngIf="usersList!==undefined">
+  <div *ngFor="let user of (usersList | userActivatePipe)" style="padding-left: 3vw;padding-right: 3vw;">
+    <div class="card border-success mb-3" style="max-width: 96rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+          <div class="float-right">
+            <button type="button" class="btn btn-danger"(click)=deactivate(user.id)>Deactivate</button>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+
+

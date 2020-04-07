@@ -1,0 +1,30 @@
+<div class="card" style="width: 40vw;">
+    <div class="card-body" *ngIf="user!==undefined">
+      <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted" *ngIf="!user.isDeleted; else elseBlock">
+        <p class="text-success">Active</p>
+      </h6>
+      <ng-template #elseBlock>
+        <p class="text-danger">Deleted</p>
+      </ng-template>
+
+      <div class="detailsText">
+        <div>
+          <p class="card-text">LoginID  </p>
+          <p class="card-text" style="width: 10vw;">First Name </p>
+          <p class="card-text">Last Name  </p>
+          <p class="card-text">Age        </p>
+          <p class="card-text" style="font-style: italic;">Last Updated</p>
+        </div>
+        <div style="padding-left: 10vw;">
+          <p class="card-text">{{user.login | titlecase}}</p>
+          <p class="card-text">{{user.firstName | titlecase}}</p>
+          <p class="card-text">{{user.lastName | titlecase}}</p>
+          <p class="card-text">{{user.age}}</p>
+          <p class="card-text" style="font-style: italic;">{{user.updatedAt | date:'longDate'}}</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>

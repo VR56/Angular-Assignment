@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+a.nav-link.active-link{
+    border-style: solid;
+    border-width: thin;
+    border-radius: 5px;
+    font-weight: bolder;
+}
