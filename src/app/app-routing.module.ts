@@ -10,11 +10,6 @@ const routes: Routes = [
   {path:"home",component:StartPageComponent},
   {path:"active",component:ActiveComponent},
   {path:"deleted",component:DeletedComponent},
-  // {path:"manage",component:UserListComponentComponent,
-  // children:[
-  //   {path:":id",component:UserDetailsComponentComponent}
-  // ]
-  // },
   {path: "manage", 
     loadChildren: ()=> import("./manage-module/manage-module.module").then(
         (file) => file.ManageModuleModule

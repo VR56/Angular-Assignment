@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService,User } from "../../user-service.service";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-deleted',
@@ -7,11 +8,13 @@ import { UserServiceService,User } from "../../user-service.service";
   styleUrls: ['./deleted.component.css']
 })
 export class DeletedComponent implements OnInit {
+  // usersList: Observable<any>;
   usersList:User[];
   isDeleted:false;
 
   constructor(private users:UserServiceService) { }
   ngOnInit(): void {
+    // this.usersList = this.users.getUsers();
     this.users.getUsers()  
     .subscribe(
       (result) => {

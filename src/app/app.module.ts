@@ -11,12 +11,6 @@ import { StartPageComponent } from './start-page/start-page.component';
 import { DeletedComponent } from './deleted/deleted/deleted.component';
 import { UserPipePipe } from './user-pipe.pipe';
 import { UserActivatePipePipe } from './user-activate-pipe.pipe';
-// import { UserDetailsComponent } from './user-details/user-details.component';
-// import { ManageModule } from "./manage/manage.module";
-// import { UserListComponent } from './user-list/user-list.component';
-// import { UserListComponent } from "./manage/user-list/user-list.component";
-// import {UserDetailsComponentComponent} from "./manage-module/user-details-component/user-details-component.component";
-// import { UserListComponentComponent } from "./manage-module/user-list-component/user-list-component.component";
 
 @NgModule({
   declarations: [

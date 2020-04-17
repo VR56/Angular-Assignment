@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ActiveComponent } from './active/active.component';
 
 
-
 @NgModule({
   declarations: [ActiveComponent],
   imports: [

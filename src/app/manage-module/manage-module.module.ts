@@ -5,7 +5,7 @@ import { UserListComponentComponent } from './user-list-component/user-list-comp
 import { RouterModule, Routes } from '@angular/router';
 import { JsonPipe } from "@angular/common";
 import { CreateFormComponent } from './create-form/create-form.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { EditFormComponent } from './edit-form/edit-form.component';
 const manageRoutes: Routes = [
   {
@@ -23,12 +23,14 @@ const manageRoutes: Routes = [
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(manageRoutes)
   ],
   providers:[JsonPipe],
   exports:[
     UserDetailsComponentComponent,
-    UserListComponentComponent
+    UserListComponentComponent,
+    ReactiveFormsModule
   ]
 })
 export class ManageModuleModule { } 

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserServiceService,User } from "../../user-service.service";
+// import { AppComponent } from "../../app.component";
 
 @Component({
   selector: 'app-active',
