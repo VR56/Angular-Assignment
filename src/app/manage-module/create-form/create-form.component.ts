@@ -3,7 +3,7 @@ import { FormControl,FormGroup,Validators } from "@angular/forms";
 import { UserServiceService } from 'src/app/user-service.service';
 import { User } from "../../user-service.service";
 
-
+const pattern = "^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9]+)$"
 @Component({
   selector: 'app-create-form',
   templateUrl: './create-form.component.html',
@@ -41,13 +41,15 @@ export class CreateFormComponent implements OnInit {
       ]),
       password: new FormControl('',[
         Validators.required,
-        Validators.minLength(4),
+        Validators.minLength(6),
         Validators.maxLength(15),
+        Validators.pattern(pattern)
       ]),
       passwordConfirm: new FormControl('',[
         Validators.required,
-        Validators.minLength(4),
+        Validators.minLength(6),
         Validators.maxLength(15),
+        Validators.pattern(pattern)
       ]),
     },
     {

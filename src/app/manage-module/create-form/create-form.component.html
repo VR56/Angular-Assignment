@@ -62,6 +62,9 @@
             <div *ngIf="createForm.get('password').errors.minlength||createForm.get('password').errors.maxLength">
                 Password should be between 4 and 15 characters
             </div>
+            <div *ngIf="createForm.get('password').errors.pattern">
+                Password should contain atleast one number
+            </div>
             </div>
     </div>
     <div class="form-group">
@@ -74,6 +77,9 @@
         </div>
         <div *ngIf="createForm.get('passwordConfirm').errors.minlength||createForm.get('passwordConfirm').errors.maxlength">
             Password should be between 4 and 15 characters
+        </div>
+        <div *ngIf="createForm.get('passwordConfirm').errors.pattern">
+            Password should contain one number
         </div>
         <div *ngIf="createForm.get('password').value!==createForm.get('passwordConfirm').value">
             Passwords do not match
