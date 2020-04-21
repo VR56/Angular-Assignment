@@ -1,0 +1,95 @@
+<form [formGroup]="createForm" id="Login">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" formControlName="firstname" id="firstName" placeholder="Enter first name" style="width: 40vw;">
+            <div *ngIf="createForm.get('firstname').invalid && (createForm.get('firstname').dirty || createForm.get('firstname').touched)"
+            class="alert alert-danger" style="margin-top: 1vw;">
+            <div *ngIf="createForm.get('firstname').errors.required">
+            First Name is required.
+            </div>
+            <div *ngIf="createForm.get('firstname').errors.minlength">
+            First Name must be at least 4 characters long.
+            </div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" formControlName="lastname" id="lastName" placeholder="Enter last name">
+            <div *ngIf="createForm.get('lastname').invalid && (createForm.get('lastname').dirty || createForm.get('lastname').touched)"
+            class="alert alert-danger" style="margin-top: 1vw;">
+            <div *ngIf="createForm.get('lastname').errors.required">
+            Last Name is required.
+            </div>
+            <div *ngIf="createForm.get('lastname').errors.minlength">
+            Last Name must be at least 4 characters long.
+            </div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="login">Login</label>
+        <input type="text" class="form-control" formControlName="login" id="login" placeholder="Enter login">
+            <div *ngIf="createForm.get('login').invalid && (createForm.get('login').dirty || createForm.get('login').touched)"
+            class="alert alert-danger" style="margin-top: 1vw;">
+            <div *ngIf="createForm.get('login').errors.required">
+                Login is required.
+            </div>
+            <div *ngIf="createForm.get('login').errors.minlength">
+                Login should be at least 4 characters long
+            </div>
+            </div>
+    </div>
+    <div div class="form-group">
+        <label for="age">Age</label>
+        <input type="number" class="form-control" formControlName="age" id="age" placeholder="Enter age">
+            <div *ngIf="createForm.get('age').invalid && (createForm.get('age').dirty || createForm.get('age').touched)"
+            class="alert alert-danger" style="margin-top: 1vw;">
+            <div *ngIf="createForm.get('age').errors.required">
+            Age is required.
+            </div>
+            <div *ngIf="createForm.get('age').errors.min||createForm.get('age').errors.max">
+                Age should be between 1 and 150
+            </div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">
+        <div *ngIf="createForm.get('password').invalid && (createForm.get('password').dirty || createForm.get('password').touched)"
+            class="alert alert-danger" style="margin-top: 1vw;">
+            <div *ngIf="createForm.get('password').errors.required">
+            Password is required.
+            </div>
+            <div *ngIf="createForm.get('password').errors.minlength||createForm.get('password').errors.maxLength">
+                Password should be between 4 and 15 characters
+            </div>
+            <div *ngIf="createForm.get('password').errors.pattern">
+                Password should contain atleast one number
+            </div>
+            </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Confirm Password</label>
+        <input type="text" class="form-control" formControlName="passwordConfirm" id="passwordConfirm" placeholder="Enter your password again">
+        <div *ngIf="createForm.get('passwordConfirm').invalid && (createForm.get('passwordConfirm').dirty || createForm.get('passwordConfirm').touched)"
+        class="alert alert-danger" style="margin-top: 1vw;">
+        <div *ngIf="createForm.get('passwordConfirm').errors.required">
+        Password is required.
+        </div>
+        <div *ngIf="createForm.get('passwordConfirm').errors.minlength||createForm.get('passwordConfirm').errors.maxlength">
+            Password should be between 4 and 15 characters
+        </div>
+        <div *ngIf="createForm.get('passwordConfirm').errors.pattern">
+            Password should contain one number
+        </div>
+        <div *ngIf="createForm.get('password').value!==createForm.get('passwordConfirm').value">
+            Passwords do not match
+        </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="createUser()" [disabled]="!createForm.valid">Submit</button>
+    <br>
+    <br>
+    <div class="alert alert-success" role="alert" *ngIf="successMessage===true">
+        Form Created Successfully!
+    </div>
+</form>

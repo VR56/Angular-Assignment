@@ -1,0 +1,44 @@
+<div class="float-right" style="margin-right: 80px;">
+  <button type="button" class="btn btn-success" (click)="createUser()">Create</button>
+</div>
+<br>
+<br>
+<br>
+<div class="forDisplay">
+    <div style="padding-left: 3vw;">
+      <div *ngFor="let user of usersList" >
+        <div class="card border-success mb-3" style="max-width: 40vw;" *ngIf="!user.isDeleted; else elseBlock">
+            <div [ngClass]="['card-body','widthClass']">
+              <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+              <br>
+              <div class="float-left">
+                <button type="button" class="btn btn-warning" (click)="onSelectEdit(user)">Edit</button>
+              </div>
+              <div class="float-right">
+                <button type="button" class="btn btn-primary" (click)="onSelect(user)">Details</button>
+              </div>
+            </div>
+        </div>
+        <ng-template #elseBlock>
+            <div class="card border-danger  mb-3" style="max-width: 40vw;">
+                <div class="card-body">
+                  <h5 class="card-title">{{user.firstName}} {{user.lastName}}</h5>
+                  <br>
+                  <div class="float-left">
+                    <button type="button" class="btn btn-warning" (click)="onSelectEdit(user)">Edit</button>
+                  </div>
+                  <div class="float-right">
+                    <button type="button" class="btn btn-primary" (click)="onSelect(user)">Details</button>
+                  </div>
+                </div>
+            </div>  
+        </ng-template>
+    </div>
+    </div>
+  <div style="padding-left: 10vw;">
+    <router-outlet></router-outlet>
+  </div>
+  </div>
+ 
+    
+

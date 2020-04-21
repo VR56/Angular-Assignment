@@ -1,0 +1,8 @@
+.forDisplay{
+    display: flex;
+    flex-direction: row;
+}
+.widthClass
+{
+    width: 40vw;
+}

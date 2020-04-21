@@ -1,0 +1,25 @@
+<h2 *ngIf="user!==undefined">
+    {{user.firstName}} {{user.lastName}}
+</h2>
+
+<form id="Edit">
+    <h5 class="card-title"></h5>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input [(ngModel)]="password" [ngModelOptions]="{standalone: true}" type="text" class="form-control" id="password" placeholder="Password" style="width: 40vw;">
+    </div>
+    <div class="alert alert-danger" role="alert" *ngIf="errorMessage===true">
+        Wrong Password! Enter the correct password 
+      </div>
+    <div div class="form-group">
+        <label for="age">Age</label>
+        <input [(ngModel)]="age" [ngModelOptions]="{standalone: true}" type="number" class="form-control" id="age" placeholder="Enter age">
+    </div>
+
+    <button type="submit" class="btn btn-primary" (click)="updateUser()">Update</button>
+    <br>
+    <br>
+    <div class="alert alert-success" role="alert" *ngIf="successMessage===true">
+        Form Updated Successfully!
+      </div>
+</form>
